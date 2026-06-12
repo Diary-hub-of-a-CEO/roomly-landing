@@ -165,7 +165,7 @@ const server = http.createServer((req, res) => {
 
   // Static assets
   if (pathname === '/styles.css' || pathname === '/script.js') {
-    const filePath = path.join(__dirname, pathname.slice(1));
+    const filePath = path.join(__dirname, 'public', pathname.slice(1));
     fs.readFile(filePath, (err, data) => {
       if (err) {
         sendResponse(res, 404, 'Not Found');
@@ -235,7 +235,17 @@ const server = http.createServer((req, res) => {
         sendResponse(res, 200, data, contentType);
         return;
       }
-      sendResponse(res, 404, 'Not Found');
+
+      const publicPath = path.join(__dirname, 'public', pathname);
+      fs.readFile(publicPath, (publicErr, publicData) => {
+        if (!publicErr) {
+          const ext = path.extname(publicPath).toLowerCase();
+          const contentType = ext === '.css' ? 'text/css' : ext === '.js' ? 'application/javascript' : 'text/html';
+          sendResponse(res, 200, publicData, contentType);
+          return;
+        }
+        sendResponse(res, 404, 'Not Found');
+      });
     });
     return;
   }

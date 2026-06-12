@@ -5,40 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Nepal's upcoming smart housing platform. Discover verified rooms, flats, apartments, hostels, and co-living spaces.">
     <title>RoomLy — Find Your Next Home in Nepal</title>
-    <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
+<script src="/script.js" defer></script>
 </head>
-<body>
-    <!-- Loading Screen -->
+<body class="page-home">
     <div class="loading-screen" id="loadingScreen">
-        <div class="loading-container">
-            <div class="animated-text">
-                <span class="letter">R</span>
-                <span class="letter">o</span>
-                <span class="letter">o</span>
-                <span class="letter">m</span>
-                <span class="letter">L</span>
-                <span class="letter">y</span>
-            </div>
-            <div class="loading-dots">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <div class="loading-container">
+        <div class="animated-text">
+          <span class="letter">R</span>
+          <span class="letter">o</span>
+          <span class="letter">o</span>
+          <span class="letter">m</span>
+          <span class="letter">L</span>
+          <span class="letter">y</span>
         </div>
+        <div class="loading-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </div>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-content">
-                <div class="logo">RoomLy</div>
+                <a href="/" class="logo">RoomLy</a>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <ul class="nav-links">
-                    <li><a href="#problem">Problem</a></li>
-                    <li><a href="#solution">Solution</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#partners">For Landlords</a></li>
-                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="problem.html">Problem</a></li>
+                    <li><a href="solution.html">Solution</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="partners.html">For Landlords</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="product.html">Product</a></li>
                 </ul>
-                <button class="cta-btn">Join Waitlist</button>
+                <a href="index.html#early-access" class="btn btn-primary cta-btn">Join Waitlist</a>
             </div>
         </div>
     </nav>
@@ -60,7 +66,9 @@
                     <div class="phone-content">
                         <div class="phone-logo">RoomLy</div>
                         <div class="phone-property">
-                            <div class="property-image"></div>
+                            <div class="property-image">
+                                <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=400&q=80" alt="Modern 2BHK room photo">
+                            </div>
                             <div class="property-details">
                                 <h3>Modern 2BHK</h3>
                                 <p>Baluwatar, Kathmandu</p>
@@ -80,12 +88,12 @@
 
         <div class="container">
             <div class="hero-content">
-                <span class="badge blink-badge">Launching soon in Nepal</span>
+                <span class="badge badge">Launching soon in Nepal</span>
                 <h1>Find Your Next Home in Nepal<br>Without the Hassle.</h1>
                 <p>RoomLy is Nepal's upcoming smart housing platform helping tenants discover <strong>verified</strong> rooms, flats, apartments, hostels, and co-living spaces — while helping landlords find trusted tenants faster.</p>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary">Join the Waitlist</button>
-                    <button class="btn btn-secondary">Become a Property Partner</button>
+                    <a href="#early-access" class="btn btn-primary">Join the Waitlist</a>
+                    <a href="#partners" class="btn btn-secondary">Become a Property Partner</a>
                 </div>
             </div>
             <div class="hero-features">
@@ -280,7 +288,7 @@
     </section>
 
     <!-- Early Access Section -->
-    <section class="early-access">
+    <section class="early-access" id="early-access">
         <div class="container">
             <div class="form-container">
                 <h2>Be first to experience RoomLy.</h2>
@@ -422,27 +430,27 @@
             <div class="faq-items">
                 <div class="faq-item">
                     <div class="faq-question">What is RoomLy?</div>
-                    <div class="faq-answer">RoomLy is Nepal's upcoming smart housing platform designed to centralize verified listings, connect tenants with landlords, and make the rental process seamless.</div>
+                    <div class="faq-answer">RoomLy is Nepal’s new housing platform for tenants and landlords. Tenants can discover verified rooms, flats, hostels, and co-living spaces in one place. Landlords can list properties, manage inquiries, and reach trusted renters faster.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">When is RoomLy launching?</div>
-                    <div class="faq-answer">We're launching soon in 2026. Early access is already available for interested users and property partners.</div>
+                    <div class="faq-question">When can I use RoomLy?</div>
+                    <div class="faq-answer">Early access is open now, and the platform will roll out progressively in 2026. Join the waitlist today to get the first invite, priority updates, and access to new features as soon as they launch.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Is RoomLy free?</div>
-                    <div class="faq-answer">Yes, RoomLy is free for tenants to browse and book properties. Landlords also get free listing and management tools.</div>
+                    <div class="faq-question">Is RoomLy free to use?</div>
+                    <div class="faq-answer">Yes, browsing and searching are free for tenants. Landlords get free basic listings and can upgrade later for premium placement and landlord tools once the platform is live.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Can landlords list properties?</div>
-                    <div class="faq-answer">Absolutely! We're actively recruiting founding partners. Join our program to gain early visibility and priority support.</div>
+                    <div class="faq-question">Can landlords list properties now?</div>
+                    <div class="faq-answer">Yes. Landlords can sign up as founding partners and add property details today. We verify listings to keep the marketplace reliable and help you connect with serious tenants.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">How do I become a founding partner?</div>
-                    <div class="faq-answer">Fill out the "Become a Founding Partner" form in the For Landlords section. We'll get in touch with limited spots available.</div>
+                    <div class="faq-answer">Complete the form in the For Landlords section and share your property info. Our team will contact you with partner benefits, onboarding support, and next steps for early launch promotion.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Will RoomLy be available across Nepal?</div>
-                    <div class="faq-answer">Yes, our vision is to expand across Nepal and eventually become the go-to housing platform nationwide.</div>
+                    <div class="faq-question">Will RoomLy serve all cities in Nepal?</div>
+                    <div class="faq-answer">Yes. We are launching in major cities first and expanding quickly across Nepal. Our goal is to cover Kathmandu, Lalitpur, Bhaktapur, Pokhara, and other key regions soon after launch.</div>
                 </div>
             </div>
         </div>
@@ -504,7 +512,5 @@
             </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
