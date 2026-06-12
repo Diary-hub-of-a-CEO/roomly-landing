@@ -1,0 +1,12 @@
+{
+  "name": "roomly-landing-backend",
+  "version": "1.0.0",
+  "description": "RoomLy landing page with a lightweight backend for unique room pages and room APIs.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

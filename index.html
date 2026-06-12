@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nepal's upcoming smart housing platform. Discover verified rooms, flats, apartments, hostels, and co-living spaces.">
+    <title>RoomLy — Find Your Next Home in Nepal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-container">
+            <div class="animated-text">
+                <span class="letter">R</span>
+                <span class="letter">o</span>
+                <span class="letter">o</span>
+                <span class="letter">m</span>
+                <span class="letter">L</span>
+                <span class="letter">y</span>
+            </div>
+            <div class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">RoomLy</div>
+                <ul class="nav-links">
+                    <li><a href="#problem">Problem</a></li>
+                    <li><a href="#solution">Solution</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#partners">For Landlords</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+                <button class="cta-btn">Join Waitlist</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Floating Phone -->
+        <div class="floating-phone">
+            <div class="phone-frame">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                    <div class="phone-header">
+                        <span class="phone-time">9:41</span>
+                        <div class="phone-status">
+                            <span>📶</span>
+                            <span>🔋</span>
+                        </div>
+                    </div>
+                    <div class="phone-content">
+                        <div class="phone-logo">RoomLy</div>
+                        <div class="phone-property">
+                            <div class="property-image"></div>
+                            <div class="property-details">
+                                <h3>Modern 2BHK</h3>
+                                <p>Baluwatar, Kathmandu</p>
+                                <div class="property-price">Rs 28,000/month</div>
+                                <div class="property-badge verified">✓ Verified</div>
+                            </div>
+                        </div>
+                        <div class="phone-buttons">
+                            <button class="phone-btn primary">Message</button>
+                            <button class="phone-btn secondary">Save</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="phone-home"></div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge blink-badge">Launching soon in Nepal</span>
+                <h1>Find Your Next Home in Nepal<br>Without the Hassle.</h1>
+                <p>RoomLy is Nepal's upcoming smart housing platform helping tenants discover <strong>verified</strong> rooms, flats, apartments, hostels, and co-living spaces — while helping landlords find trusted tenants faster.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">Join the Waitlist</button>
+                    <button class="btn btn-secondary">Become a Property Partner</button>
+                </div>
+            </div>
+            <div class="hero-features">
+                <div class="feature-card">
+                    <div class="badge-small">Verified</div>
+                    <p>Landlord confirmed</p>
+                </div>
+                <div class="feature-card">
+                    <div class="badge-small">98% match</div>
+                    <p>For your budget</p>
+                </div>
+                <div class="feature-card">
+                    <div class="badge-small">Good evening</div>
+                    <p>Find your next home</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Preview -->
+    <section class="search-preview">
+        <div class="container">
+            <div class="search-box">
+                <input type="text" placeholder="Kathmandu, Lalitpur…" class="search-input">
+                <select class="search-select">
+                    <option>Flats</option>
+                    <option>Rooms</option>
+                    <option>Hostels</option>
+                    <option>Co-living</option>
+                </select>
+            </div>
+            <div class="listings-preview">
+                <div class="listing-card">
+                    <div class="listing-badge verified">Verified</div>
+                    <h3>Modern 2BHK · Baluwatar</h3>
+                    <p>2 bed · 1 bath</p>
+                    <div class="price">Rs 28,000<span>/month</span></div>
+                    <span class="new-badge">New</span>
+                </div>
+                <div class="listing-card">
+                    <div class="listing-badge verified">Verified</div>
+                    <h3>Cozy Room · Patan</h3>
+                    <p>2 bed · 1 bath</p>
+                    <div class="price">Rs 9,500<span>/month</span></div>
+                    <span class="popular-badge">Popular</span>
+                </div>
+                <div class="listing-card">
+                    <div class="listing-badge verified">Verified</div>
+                    <h3>Student Hostel · Kirtipur</h3>
+                    <p>2 bed · 1 bath</p>
+                    <div class="price">Rs 6,000<span>/month</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem" id="problem">
+        <div class="container">
+            <h2>Finding housing shouldn't be this difficult.</h2>
+            <p class="section-subtitle">Today, renting in Nepal is a fragmented, frustrating experience for everyone involved.</p>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-number">1</div>
+                    <h3>Endless Facebook scrolling</h3>
+                    <p>Tenants waste hours combing through groups and unreliable listings.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-number">2</div>
+                    <h3>Hard to reach quality tenants</h3>
+                    <p>Landlords struggle to find trustworthy renters efficiently.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-number">3</div>
+                    <h3>Information is scattered</h3>
+                    <p>Listings live across dozens of platforms — there's no single source of truth.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-number">4</div>
+                    <h3>No trusted ecosystem</h3>
+                    <p>Nepal lacks a single, trusted digital housing platform built for locals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution" id="solution">
+        <div class="container">
+            <h2>Meet RoomLy.</h2>
+            <p class="section-subtitle">RoomLy centralizes Nepal's housing market into one smart, trusted platform — built for tenants and landlords.</p>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">📋</div>
+                    <h3>Verified Listings</h3>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">🔍</div>
+                    <h3>Advanced Search Filters</h3>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">📍</div>
+                    <h3>Location-Based Discovery</h3>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">📊</div>
+                    <h3>Landlord Dashboard</h3>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">🎓</div>
+                    <h3>Student Housing</h3>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">🔒</div>
+                    <h3>Secure Communication</h3>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">✨</div>
+                    <h3>Smart Recommendations</h3>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">🏠</div>
+                    <h3>Easy Property Management</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>From search to keys — in four simple steps.</h2>
+            <p class="section-subtitle">A clear path from browsing to move-in day.</p>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Search Housing</h3>
+                    <p>Tell us what you need — budget, area, type.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Explore Verified Listings</h3>
+                    <p>Browse properties confirmed by RoomLy.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Connect with Owners</h3>
+                    <p>Message landlords directly and securely.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Move In</h3>
+                    <p>Finalize, sign, and settle into your new home.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Everything you need to find — or rent out — a home.</h2>
+            <p class="section-subtitle">Built from the ground up for the way Nepal rents.</p>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>Smart Search</h3>
+                    <p>Filter by budget, location, property type, and amenities.</p>
+                </div>
+                <div class="feature">
+                    <h3>Verified Listings</h3>
+                    <p>Only trusted and reviewed properties.</p>
+                </div>
+                <div class="feature">
+                    <h3>Student Housing</h3>
+                    <p>Dedicated options for students and young professionals.</p>
+                </div>
+                <div class="feature">
+                    <h3>Property Management</h3>
+                    <p>Simple tools for landlords and property owners.</p>
+                </div>
+                <div class="feature">
+                    <h3>Instant Communication</h3>
+                    <p>Connect directly with property owners.</p>
+                </div>
+                <div class="feature coming-soon">
+                    <h3>AI-Powered Matching</h3>
+                    <p>Personalized housing recommendations.</p>
+                    <span class="coming-badge">Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Early Access Section -->
+    <section class="early-access">
+        <div class="container">
+            <div class="form-container">
+                <h2>Be first to experience RoomLy.</h2>
+                <p>Join our exclusive early access program and get notified when RoomLy launches.</p>
+                <form class="signup-form" id="earlyAccessForm" action="https://formspree.io/f/xlgkpwov" method="POST">
+                    <input type="text" name="fullname" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                    <input type="text" name="city" placeholder="City" required>
+                    <select name="usertype" required>
+                        <option value="">I am a...</option>
+                        <option value="student">Student</option>
+                        <option value="tenant">Tenant</option>
+                        <option value="landlord">Landlord</option>
+                        <option value="investor">Investor</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Reserve My Spot</button>
+                    <p class="disclaimer">By joining, you agree to receive updates from RoomLy. We never spam.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Landlords Section -->
+    <section class="landlords" id="partners">
+        <div class="container">
+            <h2>Own property? Grow with RoomLy.</h2>
+            <p class="section-subtitle">Become a founding property partner and gain early visibility when RoomLy launches. Limited spots available.</p>
+            <div class="landlord-benefits">
+                <div class="benefit">✓ Featured placement</div>
+                <div class="benefit">✓ Priority onboarding</div>
+                <div class="benefit">✓ Early partner badge</div>
+                <div class="benefit">✓ Direct tenant inquiries</div>
+            </div>
+            <form class="landlord-form" id="landlordForm" action="https://formspree.io/f/xlgkpwov" method="POST">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="number" name="properties" placeholder="Number of Properties" required>
+                <input type="text" name="location" placeholder="Property Location" required>
+                <button type="submit" class="btn btn-primary">Become a Founding Partner</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stat">
+                <div class="stat-number">100%</div>
+                <p>Housing Market Focused</p>
+            </div>
+            <div class="stat">
+                <div class="stat-number">🇳🇵</div>
+                <p>Built for Nepal</p>
+            </div>
+            <div class="stat">
+                <div class="stat-number">2026</div>
+                <p>Launching Soon</p>
+            </div>
+            <div class="stat">
+                <div class="stat-number">↑</div>
+                <p>Growing Community</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Loved by tenants, students, and landlords.</h2>
+            <p class="section-subtitle">Real reactions from our early community.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"Finally — a single place to find verified rooms instead of scrolling endless Facebook groups."</p>
+                    <div class="testimonial-author">
+                        <span class="avatar">P</span>
+                        <div>
+                            <strong>Priya R.</strong>
+                            <span>Student</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Booked a flat in Lalitpur in 2 days. The verified badge gave me real confidence."</p>
+                    <div class="testimonial-author">
+                        <span class="avatar">S</span>
+                        <div>
+                            <strong>Sandeep M.</strong>
+                            <span>Tenant</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"RoomLy connects me with quality tenants directly. The landlord dashboard is a game changer."</p>
+                    <div class="testimonial-author">
+                        <span class="avatar">R</span>
+                        <div>
+                            <strong>Ranjana K.</strong>
+                            <span>Property Owner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referral Program -->
+    <section class="referral">
+        <div class="container">
+            <h2>Move up the waitlist.</h2>
+            <p class="section-subtitle">Invite friends and earn priority access. Your unique referral link is generated when you join.</p>
+            <div class="referral-tiers">
+                <div class="tier">
+                    <div class="tier-number">3</div>
+                    <p>referrals</p>
+                    <div class="tier-reward">Priority Access</div>
+                </div>
+                <div class="tier">
+                    <div class="tier-number">10</div>
+                    <p>referrals</p>
+                    <div class="tier-reward">Founder Badge</div>
+                </div>
+                <div class="tier">
+                    <div class="tier-number">25</div>
+                    <p>referrals</p>
+                    <div class="tier-reward">VIP Early Access</div>
+                </div>
+            </div>
+            <a href="#" class="link-btn">Get my referral link</a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Frequently asked questions.</h2>
+            <p class="section-subtitle">Everything you need to know about RoomLy.</p>
+            <div class="faq-items">
+                <div class="faq-item">
+                    <div class="faq-question">What is RoomLy?</div>
+                    <div class="faq-answer">RoomLy is Nepal's upcoming smart housing platform designed to centralize verified listings, connect tenants with landlords, and make the rental process seamless.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">When is RoomLy launching?</div>
+                    <div class="faq-answer">We're launching soon in 2026. Early access is already available for interested users and property partners.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is RoomLy free?</div>
+                    <div class="faq-answer">Yes, RoomLy is free for tenants to browse and book properties. Landlords also get free listing and management tools.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can landlords list properties?</div>
+                    <div class="faq-answer">Absolutely! We're actively recruiting founding partners. Join our program to gain early visibility and priority support.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do I become a founding partner?</div>
+                    <div class="faq-answer">Fill out the "Become a Founding Partner" form in the For Landlords section. We'll get in touch with limited spots available.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Will RoomLy be available across Nepal?</div>
+                    <div class="faq-answer">Yes, our vision is to expand across Nepal and eventually become the go-to housing platform nationwide.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investors Section -->
+    <section class="investors">
+        <div class="container">
+            <h2>Building Nepal's future housing ecosystem.</h2>
+            <p class="section-subtitle">RoomLy aims to digitize property discovery, rental management, and housing accessibility across Nepal through technology, trust, and convenience.</p>
+            <div class="investor-cards">
+                <div class="investor-card">
+                    <h3>Vision</h3>
+                    <p>A Nepal where finding a home is as effortless as ordering food online.</p>
+                </div>
+                <div class="investor-card">
+                    <h3>Mission</h3>
+                    <p>Digitize property discovery, rental management, and housing accessibility across the country.</p>
+                </div>
+                <div class="investor-card">
+                    <h3>Growth Potential</h3>
+                    <p>A multi-billion-rupee housing market with virtually no trusted digital incumbent.</p>
+                </div>
+            </div>
+            <a href="mailto:roomly.connect@gmail.com" class="btn btn-primary">Get the investor deck</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>RoomLy</h3>
+                    <p>Nepal's upcoming smart housing platform — verified listings, trusted landlords, and a smoother way to find your next home.</p>
+                    <p><strong>roomly.connect@gmail.com</strong></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#solution">About RoomLy</a></li>
+                        <li><a href="mailto:roomly.connect@gmail.com">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Social</h4>
+                    <ul>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 RoomLy. All Rights Reserved.</p>
+                <p>Made with care for Nepal.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
