@@ -79,6 +79,22 @@ function serveFile(res, filePath) {
   });
 }
 
+function resolvePagePath(pathname) {
+  const normalized = pathname.replace(/^\/+|\/+$/g, '');
+  if (!normalized || normalized === 'index') {
+    return path.join(__dirname, 'index.html');
+  }
+
+  const candidates = [
+    path.join(__dirname, normalized),
+    path.join(__dirname, `${normalized}.html`),
+    path.join(__dirname, 'public', normalized),
+    path.join(__dirname, 'public', `${normalized}.html`),
+  ];
+
+  return candidates.find(candidate => fs.existsSync(candidate) && fs.statSync(candidate).isFile()) || null;
+}
+
 function getRoomById(id) {
   return rooms.find(room => room.id === id);
 }
@@ -219,24 +235,11 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // Root landing page
-  if (pathname === '/' || pathname === '/index.html') {
-    serveFile(res, path.join(__dirname, 'index.html'));
-    return;
-  }
-
-  // Serve top-level HTML pages like /faq.html, /partners.html, etc.
+  // Root landing page and clean route pages like /problem, /solution, /faq, etc.
   if (!pathname.includes('..')) {
-    const topLevelPath = path.join(__dirname, pathname.replace(/^\//, ''));
-    const publicPath = path.join(__dirname, 'public', pathname.replace(/^\//, ''));
-
-    if (fs.existsSync(topLevelPath) && fs.statSync(topLevelPath).isFile()) {
-      serveFile(res, topLevelPath);
-      return;
-    }
-
-    if (fs.existsSync(publicPath) && fs.statSync(publicPath).isFile()) {
-      serveFile(res, publicPath);
+    const pagePath = resolvePagePath(pathname);
+    if (pagePath) {
+      serveFile(res, pagePath);
       return;
     }
   }

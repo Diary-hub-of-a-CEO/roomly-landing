@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/problem", "destination": "/problem.html" },
+    { "source": "/solution", "destination": "/solution.html" },
+    { "source": "/features", "destination": "/features.html" },
+    { "source": "/partners", "destination": "/partners.html" },
+    { "source": "/faq", "destination": "/faq.html" },
+    { "source": "/product", "destination": "/product.html" }
+  ]
+}
