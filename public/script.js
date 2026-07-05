@@ -7,19 +7,29 @@ window.addEventListener('load', () => {
     }
 });
 
-// Phone button redirect to form
+const mobileToggle = document.querySelector('.mobile-menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+if (mobileToggle && navLinks) {
+    mobileToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+        mobileToggle.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('show');
+            mobileToggle.classList.remove('open');
+        });
+    });
+}
+
+// Phone button redirect to Google Form
 const phoneButtons = document.querySelectorAll('.phone-btn');
+const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSem4Cv9gOQ0ffEAG6drXDBrICv99zOL9jeM9FRlwemSMTaNnQ/viewform?usp=dialog';
 if (phoneButtons.length) {
     phoneButtons.forEach(button => {
         button.addEventListener('click', () => {
-            const earlyAccessSection = document.getElementById('early-access');
-            if (earlyAccessSection) {
-                const top = earlyAccessSection.getBoundingClientRect().top + window.pageYOffset;
-                window.scrollTo({ top, behavior: 'auto' });
-                console.log('Phone button clicked, jumping to early access form.');
-            } else {
-                console.warn('Early access section not found.');
-            }
+            window.open(googleFormUrl, '_blank', 'noopener,noreferrer');
         });
     });
 }
@@ -166,6 +176,22 @@ yearElements.forEach(footer => {
 });
 
 console.log('✨ RoomLy Landing Page - All features loaded successfully!');
+
+const revealCards = document.querySelectorAll('.reveal-card');
+if ('IntersectionObserver' in window && revealCards.length) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    revealCards.forEach(card => revealObserver.observe(card));
+} else {
+    revealCards.forEach(card => card.classList.add('visible'));
+}
 
 // Handle listing card clicks (if you want to add modal or navigation)
 document.querySelectorAll('.listing-card').forEach(card => {
