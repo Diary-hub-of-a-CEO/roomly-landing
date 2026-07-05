@@ -66,6 +66,19 @@ function sendResponse(res, statusCode, body, contentType = 'text/html') {
   res.end(body);
 }
 
+function serveFile(res, filePath) {
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      sendResponse(res, 404, 'Not Found');
+      return;
+    }
+
+    const ext = path.extname(filePath).toLowerCase();
+    const contentType = ext === '.css' ? 'text/css' : ext === '.js' ? 'application/javascript' : 'text/html';
+    sendResponse(res, 200, data, contentType);
+  });
+}
+
 function getRoomById(id) {
   return rooms.find(room => room.id === id);
 }
@@ -166,14 +179,7 @@ const server = http.createServer((req, res) => {
   // Static assets
   if (pathname === '/styles.css' || pathname === '/script.js') {
     const filePath = path.join(__dirname, 'public', pathname.slice(1));
-    fs.readFile(filePath, (err, data) => {
-      if (err) {
-        sendResponse(res, 404, 'Not Found');
-        return;
-      }
-      const contentType = pathname.endsWith('.css') ? 'text/css' : 'application/javascript';
-      sendResponse(res, 200, data, contentType);
-    });
+    serveFile(res, filePath);
     return;
   }
 
@@ -215,39 +221,24 @@ const server = http.createServer((req, res) => {
 
   // Root landing page
   if (pathname === '/' || pathname === '/index.html') {
-    fs.readFile(path.join(__dirname, 'index.html'), (err, data) => {
-      if (err) {
-        sendResponse(res, 500, 'Error loading page');
-        return;
-      }
-      sendResponse(res, 200, data, 'text/html');
-    });
+    serveFile(res, path.join(__dirname, 'index.html'));
     return;
   }
 
-  // Fallback for other static files or assets
-  const fallbackPath = path.join(__dirname, pathname);
+  // Serve top-level HTML pages like /faq.html, /partners.html, etc.
   if (!pathname.includes('..')) {
-    fs.readFile(fallbackPath, (err, data) => {
-      if (!err) {
-        const ext = path.extname(fallbackPath).toLowerCase();
-        const contentType = ext === '.css' ? 'text/css' : ext === '.js' ? 'application/javascript' : 'text/html';
-        sendResponse(res, 200, data, contentType);
-        return;
-      }
+    const topLevelPath = path.join(__dirname, pathname.replace(/^\//, ''));
+    const publicPath = path.join(__dirname, 'public', pathname.replace(/^\//, ''));
 
-      const publicPath = path.join(__dirname, 'public', pathname);
-      fs.readFile(publicPath, (publicErr, publicData) => {
-        if (!publicErr) {
-          const ext = path.extname(publicPath).toLowerCase();
-          const contentType = ext === '.css' ? 'text/css' : ext === '.js' ? 'application/javascript' : 'text/html';
-          sendResponse(res, 200, publicData, contentType);
-          return;
-        }
-        sendResponse(res, 404, 'Not Found');
-      });
-    });
-    return;
+    if (fs.existsSync(topLevelPath) && fs.statSync(topLevelPath).isFile()) {
+      serveFile(res, topLevelPath);
+      return;
+    }
+
+    if (fs.existsSync(publicPath) && fs.statSync(publicPath).isFile()) {
+      serveFile(res, publicPath);
+      return;
+    }
   }
 
   sendResponse(res, 404, 'Not Found');
